@@ -46,8 +46,8 @@
      <Compile Include="Assets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
      <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-     <Compile Include="Assets\LeRoyaumeCeleste\Scripts\CollectEquipment.cs" />
      <Compile Include="Assets\LeRoyaumeCeleste\Scripts\ResetData.cs" />
+     <Compile Include="Assets\LeRoyaumeCeleste\Scripts\CollectEquipment.cs" />
      <None Include="Assets\LeRoyaumeCeleste\Imports\SciFi_Space_Soldier\Resources\Shaders\SpaceStation_PBR_Basic.shader" />
      <None Include="Assets\LeRoyaumeCeleste\Imports\Elven_Sword\ReadMe.txt" />
      <None Include="Assets\LeRoyaumeCeleste\Imports\DiverseSpace\Diverse Space Skybox Readme.txt" />
