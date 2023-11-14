@@ -48,6 +48,7 @@
      <Compile Include="Assets\LeRoyaumeCeleste\Scripts\CosmoEquiment.cs" />
      <None Include="Assets\LeRoyaumeCeleste\Imports\SciFi_Space_Soldier\Resources\Shaders\SpaceStation_PBR_Basic.shader" />
      <None Include="Assets\license.txt" />
+     <None Include="Assets\LeRoyaumeCeleste\Imports\Sci-Fi Styled Modular Pack\Readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>D:\UnityHub\UnityEditor\2021.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
