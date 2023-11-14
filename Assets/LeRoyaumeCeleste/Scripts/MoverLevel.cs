@@ -18,7 +18,8 @@ public class MoverLevel : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "LevelExit")
+        int asChestplate = PlayerPrefs.GetInt("Chestplate", 0);
+        if (collider.tag == "LevelExit" && asChestplate == 1)
         {
             Debug.Log("Level terminé");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

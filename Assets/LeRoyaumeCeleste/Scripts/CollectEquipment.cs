@@ -23,6 +23,12 @@ public class CollectEquipment : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             var particle_equipment = GameObject.Find("Particle System_equiment");
             particle_equipment.GetComponent<Renderer>().enabled = false;
+
+            if (gameObject.tag == "Chestplate")
+            {
+                PlayerPrefs.SetInt("Chestplate", 1);
+                PlayerPrefs.Save();
+            }
         }
     }
 }
