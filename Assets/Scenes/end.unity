@@ -5479,6 +5479,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe6c8e9ad34821438d91cc61549d5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &566278244
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566278240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7868935, y: 0.48776153, z: 1.2983128}
+  m_Center: {x: 0.0000014854407, y: 0.028265534, z: 0.6795889}
 --- !u!1001 &569583184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20340,9 +20353,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13700008, guid: cfeff1d67ecb92245941b957cebd290e, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700008, guid: cfeff1d67ecb92245941b957cebd290e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 30d15bf92d051114d9bb7941e2481433, type: 2}
+    - target: {fileID: 13700008, guid: cfeff1d67ecb92245941b957cebd290e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: bb12008a6f0db5648947143d6ab21666, type: 2}
     - target: {fileID: 13700010, guid: cfeff1d67ecb92245941b957cebd290e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
