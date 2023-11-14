@@ -5828,6 +5828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 100106, guid: cfeff1d67ecb92245941b957cebd290e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 100112, guid: cfeff1d67ecb92245941b957cebd290e, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5835,6 +5839,10 @@ PrefabInstance:
     - target: {fileID: 100114, guid: cfeff1d67ecb92245941b957cebd290e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100116, guid: cfeff1d67ecb92245941b957cebd290e, type: 3}
+      propertyPath: m_TagString
+      value: Chestplate
       objectReference: {fileID: 0}
     - target: {fileID: 400106, guid: cfeff1d67ecb92245941b957cebd290e, type: 3}
       propertyPath: m_RootOrder
