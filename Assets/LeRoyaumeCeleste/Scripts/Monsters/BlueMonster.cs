@@ -36,7 +36,7 @@ public class BlueMonster : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.DecreaseHealth();
-                Debug.Log("Hit player");
+                Debug.Log("Hit player test");
             }
         }
     }
