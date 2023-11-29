@@ -29,6 +29,17 @@ public class Health : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
+
+        if (health <= 0)
+        {
+            Debug.LogError("Fermer le jeux");
+            // Vérifier si nous sommes en dehors de l'éditeur Unity
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #else
+            Application.Quit();
+            #endif
+        }
     }
 
     public void DecreaseHealth()

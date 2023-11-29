@@ -27,4 +27,17 @@ public class BlueMonster : MonoBehaviour
             animator.SetTrigger("Damage");
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    { //attacking
+        if (other.name == "PlayerCapsule")
+        {
+            Health playerHealth = other.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.DecreaseHealth();
+                Debug.Log("Hit player");
+            }
+        }
+    }
 }
