@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class BlueMonster : MonoBehaviour
 {
     public int HP = 100;
     public Animator animator;
 
-    public void TakeDamage(int damage)
+    public async void TakeDamage(int damage)
     {
         Debug.Log("TakeDamage");
         HP -= damage;
@@ -19,6 +20,8 @@ public class BlueMonster : MonoBehaviour
             //Death anim
             animator.SetTrigger("Die");
             gameObject.GetComponent<Collider>().enabled = false;
+            await Delay(2f);
+            Destroy(gameObject);
         }
         else
         {
@@ -39,5 +42,10 @@ public class BlueMonster : MonoBehaviour
                 Debug.Log("Hit player test");
             }
         }
+    }
+
+    private async Task Delay(float seconds)
+    {
+        await Task.Delay((int)(seconds * 1000));
     }
 }
