@@ -114,7 +114,6 @@ namespace StarterAssets
 			_fallTimeoutDelta = FallTimeout;
 			//_sword = GameObject.Find("Elven_Sword_01");
 			_sword = GameObject.Find("Sword");
-			Debug.Log("EPEE ! " + _sword);
 		}
 
 		private void Update()

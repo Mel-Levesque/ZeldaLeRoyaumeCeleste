@@ -10,8 +10,8 @@ public class SwordScript : MonoBehaviour
     public float attackDelay = 0.4f;
     public float attackSpeed = 0.4f;
 
-    bool attacking = false;
-    bool readyToAttack = true;
+    //bool attacking = false;
+    //bool readyToAttack = true;
     int attackCount;
 
     private int damage = 20;
