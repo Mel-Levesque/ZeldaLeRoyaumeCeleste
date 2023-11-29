@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
 
             // Reload the current scene by loading it again
             SceneManager.LoadScene(currentSceneName);
-            
+
             // Fermer le jeu
             #if UNITY_EDITOR
             //UnityEditor.EditorApplication.isPlaying = false;
