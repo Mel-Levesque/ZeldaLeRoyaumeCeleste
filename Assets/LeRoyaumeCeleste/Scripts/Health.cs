@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Health : MonoBehaviour
 {
@@ -40,11 +42,18 @@ public class Health : MonoBehaviour
             showGameOver = true;
             StartCoroutine(HideGameOverAfterSeconds(gameOverDuration));
 
+
+            // Get the name of the currently active scene
+            string currentSceneName = SceneManager.GetActiveScene().name;
+
+            // Reload the current scene by loading it again
+            SceneManager.LoadScene(currentSceneName);
+            
             // Fermer le jeu
             #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
             #else
-            Application.Quit();
+            //Application.Quit();
             #endif
         }
     }
