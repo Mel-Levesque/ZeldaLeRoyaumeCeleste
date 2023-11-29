@@ -29,6 +29,21 @@ public class CollectEquipment : MonoBehaviour
                 PlayerPrefs.SetInt("Chestplate", 1);
                 PlayerPrefs.Save();
             }
+            if(gameObject.tag == "Helmet")
+            {
+                PlayerPrefs.SetInt("Helmet", 1);
+                PlayerPrefs.Save();
+            }
+            if (gameObject.tag == "Gaz")
+            {
+                PlayerPrefs.SetInt("Gaz", 1);
+                PlayerPrefs.Save();
+            }
+            if (gameObject.tag == "Pants")
+            {
+                PlayerPrefs.SetInt("Pants", 1);
+                PlayerPrefs.Save();
+            }
         }
     }
 }

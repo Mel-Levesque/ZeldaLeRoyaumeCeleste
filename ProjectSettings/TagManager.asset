@@ -9,6 +9,9 @@ TagManager:
   - Chestplate
   - WayPoints
   - BlueMonster
+  - Helmet
+  - Gaz
+  - Pants
   layers:
   - Default
   - TransparentFX
