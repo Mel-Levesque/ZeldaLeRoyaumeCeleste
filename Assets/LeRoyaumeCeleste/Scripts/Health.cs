@@ -65,6 +65,13 @@ public class Health : MonoBehaviour
         Debug.LogError("health -1");
     }
 
+    public void IncreaseHealth()
+    {
+        numOfHearts++;
+        health++;
+        Debug.LogError("health +1");
+    }
+
     private IEnumerator HideGameOverAfterSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
