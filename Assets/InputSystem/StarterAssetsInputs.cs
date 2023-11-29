@@ -11,8 +11,15 @@ namespace StarterAssets
 		public Vector2 move;
 		public Vector2 look;
 		public bool jump;
-		public bool mainAttack;
 		public bool sprint;
+
+		[Header("Character Attack")]
+		public float attackDelay = 0.4f;
+		public float attackSpeed = 0.4f;
+		public bool mainAttack;
+		public bool attacking = false;
+		public bool readyToAttack = true;
+		public int attackCount;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;

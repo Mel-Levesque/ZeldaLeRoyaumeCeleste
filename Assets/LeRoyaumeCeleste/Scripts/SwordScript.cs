@@ -30,12 +30,15 @@ public class SwordScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     { //attacking
-        if (other.tag == "BlueMonster" && !gameObject.GetComponent<Animator>().GetBool("IsMainAttack"))
+        Debug.Log("Hit");
+        Debug.Log("other.tag = ");
+        Debug.Log(other.tag);
+        if (other.tag == "BlueMonster" && gameObject.GetComponent<Animator>().GetBool("IsMainAttack")) //
         {
             Debug.Log("Hit BlueMonster");
             //TakeDamage
             other.GetComponent<BlueMonster>().TakeDamage(damage);
         }
-        gameObject.GetComponent<Animator>().SetBool("IsMainAttack", false);
+        //gameObject.GetComponent<Animator>().SetBool("IsMainAttack", false);
     }
 }
