@@ -7,6 +7,8 @@ TagManager:
   - CinemachineTarget
   - LevelExit
   - Chestplate
+  - WayPoints
+  - BlueMonster
   layers:
   - Default
   - TransparentFX

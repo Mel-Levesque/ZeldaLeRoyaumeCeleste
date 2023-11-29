@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using System.Collections;
 #endif
 
 namespace StarterAssets
@@ -257,8 +258,21 @@ namespace StarterAssets
 			if (_input.mainAttack)
 			{
 				_sword.GetComponent<Animator>().SetTrigger("triggerMainAttack");
+				_sword.GetComponent<Animator>().SetBool("IsMainAttack", true);
+				_sword.GetComponent<Collider>().enabled = true;
 				_input.mainAttack = false;
+				StartCoroutine(SetConditionFalse());
 			}
+		}
+
+		IEnumerator SetConditionFalse()
+		{
+			//yield on a new YieldInstruction that waits for 0.35 seconds.
+			//yield return new WaitForSeconds(0.35f);
+			yield return new WaitForSeconds(1);
+
+			_sword.GetComponent<Animator>().SetBool("IsMainAttack", false);
+			_sword.GetComponent<Collider>().enabled = false;
 		}
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
