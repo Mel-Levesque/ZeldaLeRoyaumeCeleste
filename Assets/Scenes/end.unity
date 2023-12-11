@@ -1332,7 +1332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &83566851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,8 +1364,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.8588236, g: 0.9450981, b: 0.89019614, a: 1}
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9430,6 +9430,7 @@ GameObject:
   - component: {fileID: 663325931}
   - component: {fileID: 663325933}
   - component: {fileID: 663325932}
+  - component: {fileID: 663325934}
   m_Layer: 0
   m_Name: Piso
   m_TagString: Untagged
@@ -9502,6 +9503,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663325930}
   m_Mesh: {fileID: 1034878958065774682, guid: d0b7c3806759467449e0a89b31122436, type: 3}
+--- !u!65 &663325934
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663325930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09072915, y: 0.09336983, z: 0.003720921}
+  m_Center: {x: 9.335555e-19, y: -7.585139e-18, z: 0.0010510898}
 --- !u!1 &664000545
 GameObject:
   m_ObjectHideFlags: 0
@@ -12207,6 +12221,7 @@ GameObject:
   - component: {fileID: 890042634}
   - component: {fileID: 890042636}
   - component: {fileID: 890042635}
+  - component: {fileID: 890042637}
   m_Layer: 0
   m_Name: Piso
   m_TagString: Untagged
@@ -12279,6 +12294,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890042633}
   m_Mesh: {fileID: 1034878958065774682, guid: d0b7c3806759467449e0a89b31122436, type: 3}
+--- !u!65 &890042637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890042633}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09072915, y: 0.09336983, z: 0.003720921}
+  m_Center: {x: 9.335555e-19, y: -7.585139e-18, z: 0.0010510898}
 --- !u!4 &892474087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 469248, guid: 3845c7234a0ed4843ba4e38e2404f54d,
@@ -24206,6 +24234,7 @@ GameObject:
   - component: {fileID: 1431243919}
   - component: {fileID: 1431243921}
   - component: {fileID: 1431243920}
+  - component: {fileID: 1431243922}
   m_Layer: 0
   m_Name: Piso
   m_TagString: Untagged
@@ -24278,6 +24307,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431243918}
   m_Mesh: {fileID: 1034878958065774682, guid: d0b7c3806759467449e0a89b31122436, type: 3}
+--- !u!61 &1431243922
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431243918}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 9.335555e-19, y: -0.000000059604645}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.09072915, y: 0.09336983}
+  m_EdgeRadius: 0
 --- !u!1001 &1436158360
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29625,6 +29680,7 @@ GameObject:
   - component: {fileID: 1772345565}
   - component: {fileID: 1772345567}
   - component: {fileID: 1772345566}
+  - component: {fileID: 1772345568}
   m_Layer: 0
   m_Name: Piso
   m_TagString: Untagged
@@ -29697,6 +29753,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772345564}
   m_Mesh: {fileID: 1034878958065774682, guid: d0b7c3806759467449e0a89b31122436, type: 3}
+--- !u!65 &1772345568
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772345564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09072915, y: 0.09336983, z: 0.003720921}
+  m_Center: {x: 9.335555e-19, y: -0.000000059604645, z: 0.0010510898}
 --- !u!1 &1775626431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8144394004440419581, guid: 238d66a0c3d3d1a41890b5c683f97771,
@@ -32438,6 +32507,7 @@ GameObject:
   - component: {fileID: 1921578115}
   - component: {fileID: 1921578117}
   - component: {fileID: 1921578116}
+  - component: {fileID: 1921578118}
   m_Layer: 0
   m_Name: Piso
   m_TagString: Untagged
@@ -32510,6 +32580,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921578114}
   m_Mesh: {fileID: 1034878958065774682, guid: d0b7c3806759467449e0a89b31122436, type: 3}
+--- !u!65 &1921578118
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921578114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09072915, y: 0.09336983, z: 0.003720921}
+  m_Center: {x: -0.000000059604645, y: -7.585139e-18, z: 0.0010510898}
 --- !u!1 &1921625730
 GameObject:
   m_ObjectHideFlags: 0
@@ -34011,6 +34094,7 @@ GameObject:
   - component: {fileID: 2010059261}
   - component: {fileID: 2010059263}
   - component: {fileID: 2010059262}
+  - component: {fileID: 2010059264}
   m_Layer: 0
   m_Name: Piso
   m_TagString: Untagged
@@ -34083,6 +34167,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010059260}
   m_Mesh: {fileID: 1034878958065774682, guid: d0b7c3806759467449e0a89b31122436, type: 3}
+--- !u!65 &2010059264
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010059260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09072915, y: 0.09336983, z: 0.003720921}
+  m_Center: {x: 9.335555e-19, y: -7.585139e-18, z: 0.00105106}
 --- !u!1001 &2016450037
 PrefabInstance:
   m_ObjectHideFlags: 0

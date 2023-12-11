@@ -12,6 +12,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public static bool isRotateRune;
 
 		[Header("Character Attack")]
 		public float attackDelay = 0.4f;
@@ -56,6 +57,11 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+
+		public void OnRotateRune(InputValue value)
+		{
+			RotateRuneInput(value.isPressed);
+		}
 #endif
 
 
@@ -92,6 +98,20 @@ namespace StarterAssets
 		private void SetCursorState(bool newState)
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+		}
+
+		private void RotateRuneInput(bool isRotateState)
+		{
+			isRotateRune = isRotateState;
+			if (isRotateState)
+			{
+				PlayerPrefs.SetInt("isRotateRune", 1);
+			}
+			else
+			{
+				PlayerPrefs.SetInt("isRotateRune", 0);
+			}
+			PlayerPrefs.Save();
 		}
 	}
 

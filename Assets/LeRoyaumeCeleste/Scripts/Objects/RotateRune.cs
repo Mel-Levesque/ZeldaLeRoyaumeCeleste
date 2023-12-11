@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class RotateRune : MonoBehaviour
 {
+    //public StarterAssets starterAssetsInputs;
+
     GameObject textRune;
     float objectiveY;
+    //MonoBehaviour starterAssetsInputs;
+    bool isActivate = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
         textRune = GameObject.Find("RotateRune");
         textRune.SetActive(false);
+        //starterAssetsInputs = gameObject.GetComponent<StarterAssetsInputs>();
     }
 
     // Update is called once per frame
@@ -37,7 +44,16 @@ public class RotateRune : MonoBehaviour
         {
             GameObject lookedObj = hit.collider.gameObject;
             Debug.Log("YOU SEE RUNE " + lookedObj);
-            lookedObj.transform.Rotate(90.0f, 0.0f, 0.0f, Space.Self);
+
+            int isRotateRune = PlayerPrefs.GetInt("isRotateRune", 0);
+
+            if (isRotateRune > 0)
+            {
+                lookedObj.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
+                //isRotateRune = true;
+                PlayerPrefs.SetInt("isRotateRune", 0);
+                PlayerPrefs.Save();
+            }
 
             textRune.SetActive(true);
 
