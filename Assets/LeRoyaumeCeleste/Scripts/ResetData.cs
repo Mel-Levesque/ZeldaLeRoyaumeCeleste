@@ -22,7 +22,7 @@ public class ResetData : MonoBehaviour
             PlayerPrefs.SetInt("Pants", 0);
             PlayerPrefs.SetInt("Rupees", 0);
             PlayerPrefs.Save();
-            textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Pour passer au niveau suivant dirige toi vers le bloc rouge !";
+            textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Pour passer au niveau suivant dirige toi vers le bloc rouge ! Quand tu aura le plastron";
             textLevel.SetActive(true);
             StartCoroutine(DisableTextAfterSeconds(5f));
         }
