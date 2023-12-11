@@ -12,6 +12,8 @@ TagManager:
   - Helmet
   - Gaz
   - Pants
+  - Heartpiece
+  - Rune
   layers:
   - Default
   - TransparentFX

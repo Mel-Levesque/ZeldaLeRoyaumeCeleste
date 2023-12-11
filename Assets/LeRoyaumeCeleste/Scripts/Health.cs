@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
         }
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < numOfHearts)
+            if (i < health) //numOfHearts
             {
                 hearts[i].enabled = true;
             }
@@ -50,11 +50,20 @@ public class Health : MonoBehaviour
             SceneManager.LoadScene(currentSceneName);
 
             // Fermer le jeu
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             //UnityEditor.EditorApplication.isPlaying = false;
-            #else
+#else
             //Application.Quit();
-            #endif
+#endif
+        }
+
+        int heartpiece = PlayerPrefs.GetInt("Heartpiece", 0);
+        if (heartpiece == 1)
+        {
+            Debug.Log("UpdateHeart");
+            PlayerPrefs.SetInt("Heartpiece", 0);
+            PlayerPrefs.Save();
+            IncreaseHealth();
         }
     }
 

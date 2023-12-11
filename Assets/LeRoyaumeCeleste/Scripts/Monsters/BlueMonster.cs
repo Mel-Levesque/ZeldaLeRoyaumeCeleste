@@ -33,13 +33,35 @@ public class BlueMonster : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     { //attacking
+        Debug.Log("Touching player !");
+        monsterAttack(other);
+        // if (other.name == "PlayerCapsule")
+        // {
+        //     Health playerHealth = other.GetComponent<Health>();
+        //     if (playerHealth != null)
+        //     {
+        //         playerHealth.DecreaseHealth();
+        //         Debug.Log("Hit player test");
+        //     }
+        // }
+    }
+
+    // private async void OnTriggerStay(Collider other)
+    // {
+    //     await Delay(5f);
+    //     Debug.Log("Touching stay !");
+    //     monsterAttack(other);
+    // }
+
+    private void monsterAttack(Collider other)
+    {
         if (other.name == "PlayerCapsule")
         {
             Health playerHealth = other.GetComponent<Health>();
             if (playerHealth != null)
             {
                 playerHealth.DecreaseHealth();
-                Debug.Log("Hit player test");
+                Debug.Log("Hit player");
             }
         }
     }

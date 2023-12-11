@@ -260,7 +260,7 @@ namespace StarterAssets
 			{
 				_sword.GetComponent<Animator>().SetTrigger("triggerMainAttack");
 				_sword.GetComponent<Animator>().SetBool("IsMainAttack", true);
-				_sword.GetComponent<Collider>().enabled = true;
+				//_sword.GetComponent<Collider>().enabled = true;
 				_input.mainAttack = false;
 				StartCoroutine(SetConditionFalse());
 			}
@@ -273,7 +273,7 @@ namespace StarterAssets
 			yield return new WaitForSeconds(1);
 
 			_sword.GetComponent<Animator>().SetBool("IsMainAttack", false);
-			_sword.GetComponent<Collider>().enabled = false;
+			//_sword.GetComponent<Collider>().enabled = false;
 		}
 
 		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)

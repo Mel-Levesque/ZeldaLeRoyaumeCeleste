@@ -8,12 +8,15 @@ public class OpenChest : MonoBehaviour
     //public Animator animator;
     // Start is called before the first frame update
     Animator animator;
-    Collider collider;
+    //Collider colliderG;
     GameObject chestCube;
+
+    AudioSource audioG;
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        collider = gameObject.GetComponent<Collider>();
+        //colliderG = gameObject.GetComponent<Collider>();
+        audioG = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,7 +32,9 @@ public class OpenChest : MonoBehaviour
             if (!animator.GetBool("IsOpenChest"))
             {
                 animator.SetBool("IsOpenChest", true);
-                await Delay(2f);
+                GameObject.Find("HeartpieceFull").GetComponent<Animator>().SetBool("IsOpenChest", true);
+                audioG.Play();
+                await Delay(7f);
                 GameObject.Find("ChestCube").GetComponent<Collider>().enabled = false;
             }
         }

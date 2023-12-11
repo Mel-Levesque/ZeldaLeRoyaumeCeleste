@@ -15,6 +15,7 @@ public class ResetData : MonoBehaviour
             PlayerPrefs.SetInt("Helmet", 0);
             PlayerPrefs.SetInt("Gaz", 0);
             PlayerPrefs.SetInt("Pants", 0);
+            PlayerPrefs.SetInt("Rupees", 0);
             PlayerPrefs.Save();
             StartCoroutine(ShowMessageForSeconds("Pour passer au niveau suivant dirige toi vers le bloc rouge,\r\n quand tu auras récupéré ton équipement !", 5f));
         }

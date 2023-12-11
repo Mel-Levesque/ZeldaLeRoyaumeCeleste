@@ -18,7 +18,7 @@ public class SwordScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<Collider>().enabled = false;
+        gameObject.GetComponent<Collider>().enabled = true;
     }
 
     // Update is called once per frame

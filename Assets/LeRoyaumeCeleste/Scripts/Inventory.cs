@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class Inventory : MonoBehaviour
@@ -10,6 +11,17 @@ public class Inventory : MonoBehaviour
     public Image helmet;
     public Image gaz;
     public Image pants;
+    public int rupees;
+    public TMP_Text messageText;
+    //private int asRupees = 0;
+
+
+    void Start()
+    {
+        rupees = 0;
+        PlayerPrefs.SetInt("Rupees", 0);
+        PlayerPrefs.Save();
+    }
 
     // Update is called once per frame
     void Update()
@@ -53,5 +65,8 @@ public class Inventory : MonoBehaviour
         {
             pants.enabled = false;
         }
+
+        rupees = PlayerPrefs.GetInt("Rupees", 0);
+        messageText.SetText(rupees.ToString());
     }
 }
