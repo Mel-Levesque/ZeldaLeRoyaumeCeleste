@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     private float gameOverDuration = 5.0f;
     private string gameOverMessage = "Game Over";
 
-    void Update()
+    async void Update()
     {
         if (health > numOfHearts)
         {
@@ -44,17 +44,18 @@ public class Health : MonoBehaviour
 
 
             // Get the name of the currently active scene
-            string currentSceneName = SceneManager.GetActiveScene().name;
+            //string currentSceneName = SceneManager.GetActiveScene().name;
 
             // Reload the current scene by loading it again
-            SceneManager.LoadScene(currentSceneName);
+            //SceneManager.LoadScene(currentSceneName);
+            
 
             // Fermer le jeu
-#if UNITY_EDITOR
-            //UnityEditor.EditorApplication.isPlaying = false;
-#else
-            //Application.Quit();
-#endif
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #else
+                Application.Quit();
+            #endif
         }
 
         int heartpiece = PlayerPrefs.GetInt("Heartpiece", 0);
