@@ -28,19 +28,20 @@ public class MoverLevel : MonoBehaviour
             int asPants = PlayerPrefs.GetInt("Pants", 0);
 
 
-
-            if (SceneManager.GetActiveScene().buildIndex == 0 && asChestplate == 1) //OK Passage au niveau 2
+            Debug.Log("################################################");
+            if (SceneManager.GetActiveScene().buildIndex == 1 && asChestplate == 1) //OK Passage au niveau 2
             {
                 Debug.Log("Level 1 terminé");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-            else if(SceneManager.GetActiveScene().buildIndex == 0) //Pas de plastron pour passer au niveau 2
+            else if(SceneManager.GetActiveScene().buildIndex == 1) //Pas de plastron pour passer au niveau 2
             {
+                Debug.Log("Level 1 non terminé");
                 textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Pour passer au niveau 2, il faut d'abord récupérer le plastron !";
                 textLevel.SetActive(true);
                 StartCoroutine(DisableTextAfterSeconds(5f));
             }
-            else if(SceneManager.GetActiveScene().buildIndex == 1 && asHelmet == 1 && asGaz == 1 && asPants == 1){
+            else if(SceneManager.GetActiveScene().buildIndex == 2 && asHelmet == 1 && asGaz == 1 && asPants == 1){
                 Debug.Log("Level 2 terminé et jeu terminé");
                 // show message "Bravo, vous avez terminé le jeu !" et quand on fait echap on quitte le jeu
                 textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Bravo, vous avez terminé le jeu !";
@@ -55,7 +56,7 @@ public class MoverLevel : MonoBehaviour
 
 
             }
-            else if (SceneManager.GetActiveScene().buildIndex == 1){
+            else if (SceneManager.GetActiveScene().buildIndex == 2){
                 textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Vous devez récupérer le casque, la bouteille de gaz et le pantalon pour terminer le jeu!";
                 textLevel.SetActive(true);
                 StartCoroutine(DisableTextAfterSeconds(5f));
