@@ -23,6 +23,7 @@ public class CollectEquipment : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             //var particle_equipment = GameObject.Find("Particle System_equiment");
             //particle_equipment.GetComponent<Renderer>().enabled = false;
+            Debug.Log("###################################");
 
             if (gameObject.tag == "Chestplate")
             {
@@ -43,6 +44,8 @@ public class CollectEquipment : MonoBehaviour
             {
                 PlayerPrefs.SetInt("Gaz", 1);
                 PlayerPrefs.Save();
+                var particleGaz = GameObject.Find("ParticleGaz");
+                particleGaz.GetComponent<Renderer>().enabled = false;
             }
             if (gameObject.tag == "Pants")
             {
