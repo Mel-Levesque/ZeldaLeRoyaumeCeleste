@@ -14152,7 +14152,7 @@ GameObject:
   - component: {fileID: 1442778186}
   - component: {fileID: 1442778185}
   m_Layer: 0
-  m_Name: Particle System_equiment
+  m_Name: ParticleChestplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
