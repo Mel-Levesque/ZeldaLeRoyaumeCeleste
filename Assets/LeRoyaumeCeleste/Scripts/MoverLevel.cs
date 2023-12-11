@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MoverLevel : MonoBehaviour
 {
-    private bool showMessage = false;
-    private string MessageToShow = "";
+    GameObject textLevel;
 
     void Start()
     {
-        showMessage = false;
+        textLevel = GameObject.Find("LevelInfo");
+        textLevel.SetActive(false);
     }
 
     void Update()
@@ -23,65 +23,51 @@ public class MoverLevel : MonoBehaviour
         if (collider.tag == "LevelExit")
         {
             int asChestplate = PlayerPrefs.GetInt("Chestplate", 0);
-            if (SceneManager.GetActiveScene().buildIndex == 0 && asChestplate == 1)
+            int asHelmet = PlayerPrefs.GetInt("Helmet", 0);
+            int asGaz = PlayerPrefs.GetInt("Gaz", 0);
+            int asPants = PlayerPrefs.GetInt("Pants", 0);
+
+
+
+            if (SceneManager.GetActiveScene().buildIndex == 0 && asChestplate == 1) //OK Passage au niveau 2
             {
                 Debug.Log("Level 1 terminé");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
-            else
+            else if(SceneManager.GetActiveScene().buildIndex == 0) //Pas de plastron pour passer au niveau 2
             {
-                StartCoroutine(ShowMessageForSeconds("Pour passer au niveau 2, il faut d'abord récupérer le plastron !", 5f));
+                textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Pour passer au niveau 2, il faut d'abord récupérer le plastron !";
+                textLevel.SetActive(true);
+                StartCoroutine(DisableTextAfterSeconds(5f));
+            }
+            else if(SceneManager.GetActiveScene().buildIndex == 1 && asHelmet == 1 && asGaz == 1 && asPants == 1){
+                Debug.Log("Level 2 terminé et jeu terminé");
+                // show message "Bravo, vous avez terminé le jeu !" et quand on fait echap on quitte le jeu
+                textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Bravo, vous avez terminé le jeu !";
+                textLevel.SetActive(true);
+                StartCoroutine(DisableTextAfterSeconds(5f));
+                // quitte le jeu
+                #if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+                #else
+                    Application.Quit();
+                #endif
+
+
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 1){
+                textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Vous devez récupérer le casque, la bouteille de gaz et le pantalon pour terminer le jeu!";
+                textLevel.SetActive(true);
+                StartCoroutine(DisableTextAfterSeconds(5f));
+            }else{
+                Debug.Log("Test");
             }
         }
     }
 
-    private void OnGUI()
+    private IEnumerator DisableTextAfterSeconds(float seconds)
     {
-        if (showMessage)
-        {
-            // Mesurer la taille du texte
-            string message = MessageToShow;
-            GUIStyle style = new GUIStyle();
-            style.alignment = TextAnchor.MiddleCenter;
-            style.fontSize = 40;
-            GUIContent content = new GUIContent(message);
-            Vector2 textSize = style.CalcSize(content);
-
-            // Calculer les dimensions du rectangle rouge en fonction de la taille du texte
-            float padding = 10f; // Marge autour du texte
-            float rectWidth = textSize.x + 2 * padding;
-            float rectHeight = textSize.y + 2 * padding;
-            float rectX = (Screen.width - rectWidth) / 2;
-            float rectY = (Screen.height - rectHeight) / 2;
-
-            // Afficher le rectangle rouge
-            GUIStyle redRectStyle = new GUIStyle();
-            redRectStyle.normal.background = MakeTexture((int)rectWidth, (int)rectHeight, Color.red);
-            GUI.Box(new Rect(rectX, rectY, rectWidth, rectHeight), "", redRectStyle);
-
-            // Afficher le message au milieu du rectangle
-            GUI.Label(new Rect(rectX + padding, rectY + padding, textSize.x, textSize.y), message, style);
-        }
-    }
-
-    private Texture2D MakeTexture(int width, int height, Color color)
-    {
-        Color[] pixels = new Color[width * height];
-        for (int i = 0; i < pixels.Length; i++)
-        {
-            pixels[i] = color;
-        }
-        Texture2D texture = new Texture2D(width, height);
-        texture.SetPixels(pixels);
-        texture.Apply();
-        return texture;
-    }
-
-    private IEnumerator ShowMessageForSeconds(string message, float seconds)
-    {
-        MessageToShow = message;
-        showMessage = true;
         yield return new WaitForSeconds(seconds);
-        showMessage = false;
+        textLevel.SetActive(false); // Désactivez le texte après le délai spécifié
     }
 }
