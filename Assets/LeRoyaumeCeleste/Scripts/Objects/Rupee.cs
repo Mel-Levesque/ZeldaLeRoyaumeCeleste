@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rupee : MonoBehaviour
 {
+    public AudioClip rupeeSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Rupee : MonoBehaviour
         Debug.Log("OnTriggerEnter");
         if (other.name == "PlayerCapsule")
         {
+            AudioSource.PlayClipAtPoint(rupeeSound, gameObject.transform.position);
             PlayerPrefs.SetInt("Rupees", PlayerPrefs.GetInt("Rupees", 0) + 1);
             PlayerPrefs.Save();
             Destroy(gameObject);

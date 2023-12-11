@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollectEquipment : MonoBehaviour
 {
+    public AudioClip equipmentSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,8 @@ public class CollectEquipment : MonoBehaviour
             //var particle_equipment = GameObject.Find("Particle System_equiment");
             //particle_equipment.GetComponent<Renderer>().enabled = false;
             Debug.Log("###################################");
-
+            gameObject.GetComponent<AudioSource>().Play();
+            //AudioSource.PlayClipAtPoint(equipmentSound, gameObject.transform.position);
             if (gameObject.tag == "Chestplate")
             {
                 PlayerPrefs.SetInt("Chestplate", 1);
@@ -33,7 +35,7 @@ public class CollectEquipment : MonoBehaviour
                 particleChestplate.GetComponent<Renderer>().enabled = false;
                 Debug.Log("ParticleChestplate");
             }
-            if(gameObject.tag == "Helmet")
+            if (gameObject.tag == "Helmet")
             {
                 PlayerPrefs.SetInt("Helmet", 1);
                 PlayerPrefs.Save();

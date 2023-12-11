@@ -260,6 +260,7 @@ namespace StarterAssets
 			{
 				_sword.GetComponent<Animator>().SetTrigger("triggerMainAttack");
 				_sword.GetComponent<Animator>().SetBool("IsMainAttack", true);
+				_sword.GetComponent<AudioSource>().Play();
 				//_sword.GetComponent<Collider>().enabled = true;
 				_input.mainAttack = false;
 				StartCoroutine(SetConditionFalse());
