@@ -11,12 +11,13 @@ public class RotateRune : MonoBehaviour
     //MonoBehaviour starterAssetsInputs;
     bool isActivate = false;
 
-
+    Animator doorAnimator;
     // Start is called before the first frame update
     void Start()
     {
         textRune = GameObject.Find("RotateRune");
         textRune.SetActive(false);
+        doorAnimator = GameObject.Find("Door_start").GetComponent<Animator>();
         //starterAssetsInputs = gameObject.GetComponent<StarterAssetsInputs>();
     }
 
@@ -34,6 +35,8 @@ public class RotateRune : MonoBehaviour
 
         Debug.Log("YOU SEE");
 
+        checkRuneRotation();
+
         if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
         {
             Debug.Log("YOU SEE " + hit.collider.gameObject);
@@ -47,7 +50,7 @@ public class RotateRune : MonoBehaviour
 
             int isRotateRune = PlayerPrefs.GetInt("isRotateRune", 0);
 
-            if (isRotateRune > 0)
+            if (isRotateRune > 0 && !doorAnimator.GetBool("IsOpenDoor"))
             {
                 lookedObj.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
                 //isRotateRune = true;
@@ -78,5 +81,41 @@ public class RotateRune : MonoBehaviour
             textRune.SetActive(false);
         }
 
+    }
+
+    private void checkRuneRotation()
+    {
+        Debug.Log("TEST DE LA POSITION !!");
+        GameObject rune1 = GameObject.Find("CMDL_73F36E22.001");
+        GameObject rune2 = GameObject.Find("CMDL_E6C4B13E");
+        GameObject rune3 = GameObject.Find("CMDL_73F36E22");
+        GameObject rune4 = GameObject.Find("CMDL_E6C4B13E.001");
+
+        float rune1Y = rune1.transform.rotation.eulerAngles.y;
+        float rune2Y = rune2.transform.rotation.eulerAngles.y;
+        float rune3Y = rune3.transform.rotation.eulerAngles.y;
+        float rune4Y = rune4.transform.rotation.eulerAngles.y;
+
+        float angleX = rune3.transform.rotation.eulerAngles.x;
+        float angleY = rune3.transform.rotation.eulerAngles.y;
+        float angleZ = rune3.transform.rotation.eulerAngles.z;
+        Debug.Log("RUNE3: angle x y z = " + angleX + " - " + angleY + " - " + angleZ);
+
+        float angle4X = rune4.transform.rotation.eulerAngles.x;
+        float angle4Y = rune4.transform.rotation.eulerAngles.y;
+        float angle4Z = rune4.transform.rotation.eulerAngles.z;
+        Debug.Log("RUNE4: angle x y z = " + angle4X + " - " + angle4Y + " - " + angle4Z);
+
+
+        if (rune1Y == 55.12771f && rune2Y == 10.23085f && rune3Y == 338.4933f && rune4Y == 93.34542f)
+        {
+            Debug.Log("BONNE POSITION !!");
+            //animator.GetBool("IsOpenChest")
+            doorAnimator.SetBool("IsOpenDoor", true);
+        }
+        else
+        {
+            Debug.Log("MAUVAISE POSITION !!");
+        }
     }
 }
