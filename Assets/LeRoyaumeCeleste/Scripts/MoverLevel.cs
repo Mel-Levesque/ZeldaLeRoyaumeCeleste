@@ -28,7 +28,7 @@ public class MoverLevel : MonoBehaviour
             int asPants = PlayerPrefs.GetInt("Pants", 0);
 
 
-
+            Debug.Log("################################################");
             if (SceneManager.GetActiveScene().buildIndex == 0 && asChestplate == 1) //OK Passage au niveau 2
             {
                 Debug.Log("Level 1 terminé");
@@ -36,6 +36,7 @@ public class MoverLevel : MonoBehaviour
             }
             else if(SceneManager.GetActiveScene().buildIndex == 0) //Pas de plastron pour passer au niveau 2
             {
+                Debug.Log("Level 1 non terminé");
                 textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Pour passer au niveau 2, il faut d'abord récupérer le plastron !";
                 textLevel.SetActive(true);
                 StartCoroutine(DisableTextAfterSeconds(5f));
