@@ -43,16 +43,8 @@ public class MoverLevel : MonoBehaviour
             }
             else if(SceneManager.GetActiveScene().buildIndex == 2 && asHelmet == 1 && asGaz == 1 && asPants == 1){
                 Debug.Log("Level 2 terminé et jeu terminé");
-                // show message "Bravo, vous avez terminé le jeu !" et quand on fait echap on quitte le jeu
-                textLevel.GetComponent<TMPro.TextMeshProUGUI>().text = "Bravo, vous avez terminé le jeu !";
-                textLevel.SetActive(true);
-                StartCoroutine(DisableTextAfterSeconds(5f));
-                // quitte le jeu
-                #if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;
-                #else
-                    Application.Quit();
-                #endif
+                //Go to scène YouWin
+            SceneManager.LoadScene("YouWin");
 
 
             }
